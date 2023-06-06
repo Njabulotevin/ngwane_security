@@ -1,113 +1,222 @@
-import Image from 'next/image'
+import SectionTitle from "@/components/SectionTitle";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  BsEnvelope,
+  BsEnvelopeFill,
+  BsFacebook,
+  BsGeoAlt,
+  BsInstagram,
+  BsPhone,
+  BsTelephone,
+  BsTelephoneFill,
+} from "react-icons/bs";
 
 export default function Home() {
+  const links = ["Home", "About", "Services", "Contact"];
+  const services = [
+    { service: "Commercial Guardin", icon: "/building.png" },
+    { service: "Industrial Guardin", icon: "/factory.png" },
+    { service: "Special Events security", icon: "/red-carpet.png" },
+    { service: "Equipment Installation", icon: "/security-camera.png" },
+  ];
+
+  const servicesExtra = [
+    {
+      name: "Commercial Guarding",
+      description:
+        "Our highly trained security personnel provide reliable protection for commercial premises, ensuring the safety of your business, employees, and assets. With a proactive approach and attention to detail, we offer comprehensive security solutions tailored to meet the unique needs of your commercial establishment.",
+    },
+    {
+      name: "Industrial Guarding",
+      description:
+        "Our experienced team specializes in industrial security, providing robust protection for manufacturing plants, warehouses, and industrial sites. We understand the specific risks and challenges faced in these environments, and our skilled guards are trained to maintain a secure and controlled atmosphere, safeguarding your operations and assets.",
+    },
+    {
+      name: "Special Events",
+      description:
+        "Whether you're organizing a high-profile event or need temporary security measures, we offer specialized services such as speed fencing and events security. Our dedicated event security team ensures the smooth operation of your event, managing access control, crowd management, and overall safety to create a secure environment.",
+    },
+    {
+      name: "Installations",
+      description:
+        "Enhance your security infrastructure with our installation services. Our expert technicians deploy cutting-edge technologies, including CCTV systems, biometric access control, and integrated security solutions. We provide tailored installations to meet your specific requirements, ensuring optimal coverage and efficient management of your security systems.",
+    },
+  ];
+
+  const features = [
+    {
+      title: "Comprehensive Security Solutions",
+      description:
+        "Ngwane Security is your one-stop solution for all your security needs. We offer a complete range of services, including comprehensive planning, system analysis, design, and executive services.",
+    },
+    {
+      title: "Expertise in Security Planning",
+      description:
+        "Our experienced team excels in crafting customized security plans that align with your specific requirements. We assess potential risks, devise effective strategies, and implement robust security measures to safeguard your assets and ensure peace of mind.",
+    },
+    {
+      title: "System Analysis and Design",
+      description:
+        "With meticulous attention to detail, we conduct thorough system analysis to identify vulnerabilities and design tailored security solutions. Our goal is to optimize your security infrastructure, integrating advanced technologies for enhanced protection and efficient management.",
+    },
+    {
+      title: "Dedicated Executive Services",
+      description:
+        "Ngwane Security provides specialized executive services to protect high-profile individuals, executives, and VIPs. Our trained professionals deliver discreet and reliable security solutions, ensuring their safety and maintaining confidentiality.",
+    },
+  ];
+
+  const contacts = [
+    {
+      title: "Email Addresss",
+      value: "info@ngwanesecurity.co.za",
+      icon: <BsEnvelope size={30} />,
+    },
+    {
+      title: "Phone Numbers",
+      value: "(+27) 72 543 9261",
+      icon: <BsTelephone size={30} />,
+    },
+    {
+      title: "Our Address",
+      value: "P.O BOX 113 , DUNDONALDS ,MPUMALANGA ,2336",
+      icon: <BsGeoAlt size={30} />,
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="">
+      <main>
+        <div
+          style={{
+            backgroundSize: "100%",
+            backgroundRepeat: "no-repeat",
+          }}
+          className=" h-screen w-full bg-[url('/background_mobile.png')]  lg:bg-[url('/background.png')] "
+        >
+          <div className="h-[90px] mb-[120px]"></div>
+          <div className="flex items-center ">
+            <div className="flex flex-col items-start gap-10 p-10 lg:pl-[220px] w-full">
+              <h2 className="lg:text-6xl text-3xl text-white font-bold max-w-[700px] animate__animated animate__slideInLeft">
+                Comprehensive Protection for Your Peace of Mind
+              </h2>
+              <h4 className="text-sm lg:text-base text-slate-100  max-w-[700px] animate__animated animate__slideInLeft animate__delay">
+                Securing Your World with Exceptional Solutions. Comprehensive
+                protection, personalized and cost-efficient services for your
+                peace of mind. Trust Ngwane Security.
+              </h4>{" "}
+              <a
+                href="#_"
+                className="relative rounded lg:w-auto w-full text-center py-[17px] px-[40px] overflow-hidden group bg-red-700 r hover:bg-gradient-to-r hover:from-red-500 hover:to-red-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-400 transition-all ease-out duration-300"
+              >
+                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <span className="relative">Get Started</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
+      <section className="w-full min-h-[60vh] lg:px-[220px] p-10 lg:py-16">
+        <div className="min-h-[100px] bg-red-700 w-full lg:w-[60vw] mx-auto rounded shadow -translate-y-28 p-10">
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            {services.map((service, i) => {
+              return (
+                <div
+                  key={i}
+                  className="text-gray-100 font-semibold flex flex-col gap-4 items-center"
+                >
+                  <div className="bg-white shadow-md rounded-full w-[60px] h-[60px] flex items-center justify-center">
+                    <img src={service.icon} className="w-[30px] h-[30px]" />
+                  </div>
+                  <h4>{service.service}</h4>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex justify-center gap-16 w-full flex-wrap">
+          <img src="about_element.png" />
+          <div className="flex flex-col items-start gap-5 ">
+            <SectionTitle
+              title={"Our Story"}
+              subtitle={"Exceptional Security Services for Your Peace of Mind"}
+            />
+            <p className="text-slate-600  text-sm font-medium max-w-[685px] animate__animated animate__slideRight">
+              As a leading South African company, Ngwane Security is dedicated
+              to providing excellent security services. We offer a comprehensive
+              range of solutions, including planning, system analysis, design,
+              and executive services. With a commitment to personalized,
+              high-quality, and cost-efficient solutions, we exceed client
+              expectations by going above and beyond. As a member of the South
+              Africa PSIRA (Private Security Industry Regulatory Authority), we
+              ensure top-tier professionalism and adherence to industry
+              standards. Trust Ngwane Security to meet all your security needs
+              with meticulous attention to detail and exceptional service
+              delivery.
+            </p>
+            <button className="bg-red-700 text-white rounded-md px-[40px] py-[17px] animate__animated animate__slideInUp">
+              Read More
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="bg-red-700 w-full p-5 lg:p-10">
+        <p className="text-slate-50 text-sm font-medium max-w-[700px] text-center mx-auto">
+          Trust Ngwane Security for a comprehensive suite of security services,
+          encompassing planning, system analysis, design, and executive
+          solutions. Our expertise and commitment to excellence make us the
+          ideal partner for your security needs.
+        </p>
+      </section>
+      <section className="p-10 lg:px-[220px] lg:py-20">
+        <div className="flex flex-col gap-10">
+          <div className="max-w-[650px]">
+            <SectionTitle
+              title={"Why Choose Us."}
+              subtitle={
+                "Our personalized, high-quality, and cost-efficient approach sets us apart, as we go above and beyond to exceed your expectations"
+              }
+            />
+          </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <div className="grid  lg:grid-cols-2 gap-10">
+            {features.map((feature, i) => {
+              return (
+                <div
+                  key={i}
+                  className="flex flex-col gap-4 border border-gray-200 rounded p-4 px-6"
+                >
+                  <h4 className="text-lg font-semibold text-red-700">
+                    {feature.title}
+                  </h4>
+                  <p>{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      <section className="p-10 lg:py-20 lg:px-[220px]">
+        <div className="flex flex-wrap justify-center lg:items-start items-center gap-10 lg:gap-16">
+          {contacts.map((contact, i) => {
+            return (
+              <div
+                key={i}
+                className="flex lg:w-[200px] flex-col gap-4 items-center"
+              >
+                <div className="w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] bg-red-700 rounded-md text-white flex items-center justify-center">
+                  {contact.icon}
+                </div>
+                <h4 className="text-base font-semibold ">{contact.title}</h4>
+                <p className="text-sm font-normal text-center">
+                  {contact.value}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
 }
