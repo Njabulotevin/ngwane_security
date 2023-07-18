@@ -7,13 +7,13 @@ import {
   BsFacebook,
   BsGeoAlt,
   BsInstagram,
+  BsLightbulb,
   BsPhone,
   BsTelephone,
   BsTelephoneFill,
 } from "react-icons/bs";
 
 export default function Home() {
-  const links = ["Home", "About", "Services", "Contact"];
   const services = [
     { service: "Commercial Guardin", icon: "/building.png" },
     { service: "Industrial Guardin", icon: "/factory.png" },
@@ -124,9 +124,9 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="text-gray-100 font-semibold flex flex-col gap-4 items-center"
+                  className="text-gray-100 font-semibold flex flex-col gap-4 items-center "
                 >
-                  <div className="bg-white shadow-md rounded-full w-[60px] h-[60px] flex items-center justify-center">
+                  <div className="bg-white shadow-md rounded-full w-[60px] h-[60px] flex items-center justify-center ring ring-white ring-offset-2">
                     <img src={service.icon} className="w-[30px] h-[30px]" />
                   </div>
                   <h4>{service.service}</h4>
@@ -142,7 +142,7 @@ export default function Home() {
               title={"Our Story"}
               subtitle={"Exceptional Security Services for Your Peace of Mind"}
             />
-            <p className="text-slate-600  text-sm font-medium max-w-[685px] animate__animated animate__slideRight">
+            <p className="text-slate-600  text-sm max-w-[685px] animate__animated animate__slideRight">
               As a leading South African company, Ngwane Security is dedicated
               to providing excellent security services. We offer a comprehensive
               range of solutions, including planning, system analysis, design,
@@ -162,15 +162,15 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-red-700 w-full p-5 lg:p-10">
-        <p className="text-slate-50 text-sm font-medium max-w-[700px] text-center mx-auto">
+        <p className="text-slate-50 text-sm max-w-[700px] text-center mx-auto">
           Trust Ngwane Security for a comprehensive suite of security services,
           encompassing planning, system analysis, design, and executive
           solutions. Our expertise and commitment to excellence make us the
           ideal partner for your security needs.
         </p>
       </section>
-      <section className="p-10 lg:px-[220px] lg:py-20">
-        <div className="flex flex-col gap-10">
+      <section className="p-10 lg:px-[220px] lg:py-20 ">
+        <div className="flex flex-wrap gap-10">
           <div className="max-w-[650px]">
             <SectionTitle
               title={"Why Choose Us."}
@@ -180,17 +180,17 @@ export default function Home() {
             />
           </div>
 
-          <div className="grid  lg:grid-cols-2 gap-10">
+          <div className="grid  lg:grid-cols-2 gap-10 ">
             {features.map((feature, i) => {
               return (
                 <div
                   key={i}
-                  className="flex flex-col gap-4 border border-gray-200 rounded p-4 px-6"
+                  className="flex flex-col gap-4 rounded p-4 px-6 bg-white shadow"
                 >
                   <h4 className="text-lg font-semibold text-red-700">
                     {feature.title}
                   </h4>
-                  <p>{feature.description}</p>
+                  <p className="text-sm">{feature.description}</p>
                 </div>
               );
             })}
