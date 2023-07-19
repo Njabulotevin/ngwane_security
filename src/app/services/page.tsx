@@ -29,7 +29,7 @@ export default function Page() {
     },
   ];
   return (
-    <div className="lg:pt-[146px] ">
+    <div className="lg:pt-[146px] pt-[90px]">
       <div
         className="bg-[url('/security.jpeg')] h-[250px] relative"
         style={{ backgroundSize: "100%", backgroundPosition: "center" }}
@@ -45,7 +45,7 @@ export default function Page() {
         <div className="w-full h-full bg-gray-900/80"></div>
       </div>
 
-      <section className="lg:max-w-[60vw] mx-auto px-10 flex flex-col gap-10 my-10">
+      <section className="lg:max-w-[60vw] mx-auto px-10 flex flex-col gap-10 my-10 ">
         <SectionTitle title={" "} subtitle={"Our Services Include:"} />
         <div className="flex flex-wrap justify-center items-center gap-12">
           <div className="flex flex-wrap gap-10">
@@ -65,6 +65,70 @@ export default function Page() {
             })}
           </div>
         </div>
+      </section>
+      <section className="lg:max-w-[60vw] mx-auto px-10 flex flex-col gap-10 my-10">
+        <SectionTitle title={" "} subtitle={"Security Systems:"} />
+        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <li className="mb-4 flex flex-col gap-5">
+            <img
+              src="/security.jpeg"
+              className="w-[200px] h-[200px] object-cover"
+            />
+            <a className="hover:underline">Access Control Equipment</a>
+          </li>
+
+          <li className="mb-4 flex flex-col gap-5">
+            <img
+              src="/cctv.webp"
+              className="w-[200px] h-[200px] object-cover"
+            />
+            <a className="hover:underline">CCTV Technologies</a>
+          </li>
+
+          <li className="mb-4 flex flex-col gap-5">
+            <img
+              src="/home-alarms.jpg"
+              className="w-[200px] h-[200px] object-cover"
+            />
+            <a className="hover:underline">Intrusion Technologies</a>
+          </li>
+
+          <li className="mb-4 flex flex-col gap-5">
+            <img
+              src="/fibre.jpg"
+              className="w-[200px] h-[200px] object-cover"
+            />
+            <a className="hover:underline">Fibre Transmission Technologies</a>
+          </li>
+
+          <li className="mb-4 flex flex-col gap-5">
+            <img
+              src="/biometric.jpg"
+              className="w-[200px] h-[200px] object-cover"
+            />
+            <a className="hover:underline">Biometrics & Card Access Systems</a>
+          </li>
+        </ul>
+        <p>
+          An extremely advanced software based on self learning video analytics
+          technology system. The system learns the environment, detect unusual
+          behaviors and assesses for potential threats. Our smart detection
+          technology works in conjunction with 24/7 live offsite monitoring of
+          the CCTV surveillance System to your business or your home. License
+          Plate Recognition Camera: the LPR database is linked to SAPS and get
+          updated daily.
+        </p>
+        <SectionTitle title={" "} subtitle={"The key is Prevention:"} />
+        <p>
+          The world is becoming increasingly aware that off-site monitoring is
+          part of the security industry&apos;s way forward, there are already
+          many sites being protected by off-site monitoring. As crime increases
+          and threats become real the concept of an additional layer of security
+          is no longer unreachable. This is the niche where off-site video is
+          giving realtime support in situations of duress and loss prevention
+          via early detection and warning and providing peace-of mind by
+          allowing us to the system to analyze for any suspicious activity.
+        </p>
       </section>
     </div>
   );
