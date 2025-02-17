@@ -1,3 +1,5 @@
+"use client"
+
 import SectionTitle from "@/components/SectionTitle";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +14,8 @@ import {
   BsTelephone,
   BsTelephoneFill,
 } from "react-icons/bs";
+import {useRouter} from "next/navigation"
+import {contact_details} from "@/configs/contact_details";
 
 export default function Home() {
   const services = [
@@ -20,6 +24,8 @@ export default function Home() {
     { service: "Special Events security", icon: "/red-carpet.png" },
     { service: "Equipment Installation", icon: "/security-camera.png" },
   ];
+
+  const router = useRouter();
 
   const servicesExtra = [
     {
@@ -70,17 +76,17 @@ export default function Home() {
   const contacts = [
     {
       title: "Email Addresss",
-      value: "info@ngwanesecurity.co.za",
+      value: contact_details["email"],
       icon: <BsEnvelope size={30} />,
     },
     {
       title: "Phone Numbers",
-      value: "(+27) 72 543 9261",
+      value: contact_details["contact_number"],
       icon: <BsTelephone size={30} />,
     },
     {
       title: "Our Address",
-      value: "P.O BOX 113 , DUNDONALDS ,MPUMALANGA ,2336",
+      value: contact_details["address"],
       icon: <BsGeoAlt size={30} />,
     },
   ];
@@ -111,7 +117,7 @@ export default function Home() {
                 className="relative rounded lg:w-auto w-full text-center py-[17px] px-[40px] overflow-hidden group bg-red-700 r hover:bg-gradient-to-r hover:from-red-500 hover:to-red-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-red-400 transition-all ease-out duration-300"
               >
                 <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                <span className="relative">Get Started</span>
+                <span onClick={()=>router.push("/services")} className="relative">Get Started</span>
               </a>
             </div>
           </div>

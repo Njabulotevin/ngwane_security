@@ -1,5 +1,8 @@
+"use client"
+
 import SectionTitle from "@/components/SectionTitle";
-import React from "react";
+import React, { useCallback, useState } from "react";
+import ImageGallery from "@/components/ImageGallery";
 
 export default function Page() {
   const features = [
@@ -24,6 +27,31 @@ export default function Page() {
         "Usually in the recently released crime statistics residential Robberies mostly increases by 100% and business robberies especially small and medium business the increase over the same period is a staggering 295%. We are an area based company which ensures that our vehicles are close by and therefore able to provide a quick response in your time of urgent assistance. We are expanding our services to ensure that you are even more protected and have peace of mind.",
     },
   ];
+
+  // const images = [
+  //   {
+  //     original: "https://picsum.photos/id/1018/1000/600/",
+  //     thumbnail: "https://picsum.photos/id/1018/250/150/",
+  //   },
+  //   {
+  //     original: "https://picsum.photos/id/1015/1000/600/",
+  //     thumbnail: "https://picsum.photos/id/1015/250/150/",
+  //   },
+  //   {
+  //     original: "https://picsum.photos/id/1019/1000/600/",
+  //     thumbnail: "https://picsum.photos/id/1019/250/150/",
+  //   },
+  // ];
+
+  const images = [
+    "https://picsum.photos/id/1018/1000/600/",
+     "https://picsum.photos/id/1019/1000/600/",
+      "https://picsum.photos/id/1019/1000/600/",
+       "https://picsum.photos/id/1019/1000/600/"
+  ]
+
+
+
   return (
     <div className="lg:pt-[220px] pt-[180px]  flex flex-col gap-10">
       <section className="flex flex-col gap-10 p-10 justify-center items-center">
@@ -39,7 +67,6 @@ export default function Page() {
           analysis and design as well as executive services.
         </p>
       </section>
-
       <section>
         <div className="bg-red-700 p-10 flex flex-wrap gap-10 justify-center">
           <img
@@ -120,6 +147,9 @@ export default function Page() {
             );
           })}
         </div>
+      </section>
+      <section>
+          <ImageGallery/>
       </section>
     </div>
   );

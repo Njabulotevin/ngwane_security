@@ -2,22 +2,24 @@ import React from "react";
 import { MdEmail } from "react-icons/md";
 import { MdPhone } from "react-icons/md";
 import { MdLocationPin } from "react-icons/md";
+import { contact_details } from "@/configs/contact_details";
+
 
 function Contacts() {
   const contacts = [
     {
       name: "Email Address",
-      value: "Email: info@ngwanesecurity.co.za",
+      value: "Email: "+ contact_details["email"],
       icon: <MdEmail className="text-primary text-lg" />,
     },
     {
       name: "Phone Numbers",
-      value: "Phone: (+27) 72 543 9261",
+      value: "Phone: " + contact_details["contact_number"],
       icon: <MdPhone className="text-primary text-lg" />,
     },
     {
       name: "Physical Address",
-      value: "Address: STAND NO E 1106 RED HILL , DUNDONALDS MPUMALANGA , 2336",
+      value: contact_details["address"],
       icon: <MdLocationPin className="text-primary text-lg" />,
     },
   ];

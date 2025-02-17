@@ -11,7 +11,7 @@ function Footer() {
   const socials = [
     {
       icon: <GrFacebookOption className="text-red-700" />,
-      url: "http://www.facebook.com",
+      url: "https://web.facebook.com/profile.php?id=61565390712558",
     },
     {
       icon: <FiInstagram className="text-red-700" />,
